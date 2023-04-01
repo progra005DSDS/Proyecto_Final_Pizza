@@ -20,24 +20,18 @@ public class Administrador extends Persona{
         this.contrasenia = contrasenia;
     }
 
-}
+
 //Set y Get
 
     public String getContrasenia() {
         return contrasenia;
     }
 
-    public String getFhRegistro() {
-        return fhRegistro;
-    }
 
     public void setContrasenia(String contrasenia) {
         this.contrasenia = contrasenia;
     }
 
-    public void setFhRegistro(String fhRegistro) {
-        this.fhRegistro = fhRegistro;
-    }
 
     @Override
     public String toString() {

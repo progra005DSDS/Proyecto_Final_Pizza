@@ -27,6 +27,4 @@ public class Cliente extends Persona{
         this.direccion = direccion;
     }
 
-    public static 
-
 }
