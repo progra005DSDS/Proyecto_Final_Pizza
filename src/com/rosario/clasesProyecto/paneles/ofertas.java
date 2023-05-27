@@ -96,10 +96,30 @@ public class ofertas extends JFrame {
             }
         });
         panel.add(b4);
+
+        JButton b5= new JButton();
+        b5.setText("Regresar");
+        b5.setBounds(10,10,200,40);
+        b5.setBackground(Color.red);
+        b5.setForeground(Color.WHITE);
+        b5.setFont(new Font("arial",Font.BOLD,17));
+        b5.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                regreso();
+            }
+        });
+        panel.add(b5);
     }
     public void pago(){
         datosPago p= new datosPago();
         p.setVisible(true);
+        dispose();
+    }
+    public void regreso(){
+        Ventana ventana= new Ventana();
+        ventana.setVisible(true);
+        dispose();
     }
     }
 

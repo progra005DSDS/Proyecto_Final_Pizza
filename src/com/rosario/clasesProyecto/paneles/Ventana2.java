@@ -54,14 +54,15 @@ public class Ventana2 extends JFrame{//PANEL DEL USUSARIO
         panel.add(etiqueta1);// agregar la imagen al panel
     }
     private void botones(){
-        JButton b1 = new JButton();//creacion de un boton
+        //DESACTIVADO TEMPORALMENTE :)
+        /*JButton b1 = new JButton();//creacion de un boton
         b1.setText("Cuenta");//establecer texto en el boton
         b1.setEnabled(true);//activar o desactivar el boton
         b1.setBounds(1050,10,200,40);// posicion y tamaño del boton
         b1.setForeground(Color.WHITE);//cambiar color de letra
         b1.setBackground(Color.red);
         b1.setFont(new Font("arial",Font.BOLD,17));//cambiar el tamaño y estilo de letra
-        panel.add(b1);//agregar el boton al panel
+        panel.add(b1);//agregar el boton al panel*/
 
 
         JButton b2= new JButton();
@@ -84,6 +85,12 @@ public class Ventana2 extends JFrame{//PANEL DEL USUSARIO
         b3.setBackground(Color.red);
         b3.setForeground(Color.WHITE);
         b3.setFont(new Font("arial",Font.BOLD,17));
+        b3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                reserva();
+            }
+        });
         panel.add(b3);
 
         JButton b4 = new JButton();
@@ -92,11 +99,48 @@ public class Ventana2 extends JFrame{//PANEL DEL USUSARIO
         b4.setBackground(Color.red);
         b4.setForeground(Color.WHITE);
         b4.setFont(new Font("arial",Font.BOLD,17));
+        b4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                pizza();
+            }
+        });
         panel.add(b4);
+
+        JButton b5= new JButton();
+        b5.setText("Regresar");
+        b5.setBounds(10,10,200,40);
+        b5.setBackground(Color.red);
+        b5.setForeground(Color.WHITE);
+        b5.setFont(new Font("arial",Font.BOLD,17));
+        b5.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                regreso();
+            }
+        });
+        panel.add(b5);
     }
 public void combos(){
         vCombo combos= new vCombo();
         combos.setVisible(true);
+        dispose();
+}
+public  void regreso(){
+        Ventana ventana = new Ventana();
+        ventana.setVisible(true);
+        dispose();
+}
+public  void pizza(){
+        vPizza pizza= new vPizza();
+        pizza.setVisible(true);
+        dispose();
+
+}
+public void reserva(){
+        vReservacion vReservacion= new vReservacion();
+        vReservacion.setVisible(true);
+        dispose();
 }
 
 }

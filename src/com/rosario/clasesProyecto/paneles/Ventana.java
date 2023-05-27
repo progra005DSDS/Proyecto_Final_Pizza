@@ -4,6 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 
 import com.rosario.clasesProyecto.paneles.vOpcion;
 import com.rosario.clasesProyecto.paneles.ofertas;
@@ -85,11 +88,17 @@ public class Ventana extends JFrame {
         panel.add(b2);
 
         JButton b3= new JButton();
-        b3.setText("Servicios");
+        b3.setText("Contactos");
         b3.setBounds(550,600,200,40);
         b3.setBackground(Color.red);
         b3.setForeground(Color.WHITE);
         b3.setFont(new Font("arial",Font.BOLD,17));
+        b3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                contactos();
+            }
+        });
         panel.add(b3);
 
         JButton b4 = new JButton();
@@ -99,14 +108,32 @@ public class Ventana extends JFrame {
         b4.setForeground(Color.WHITE);
         b4.setFont(new Font("arial",Font.BOLD,17));
         panel.add(b4);
+        b4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                nosotros();
+            }
+        });
     }
     public void tipoUsuario(){
         vOpcion opcion= new vOpcion();
         opcion.setVisible(true);
+        dispose();
     }
     public void ofertas(){
         ofertas ofertas= new ofertas();
         ofertas.setVisible(true);
+        dispose();
+    }
+    public void nosotros(){
+        Nosotros nosotros= new Nosotros();
+        nosotros.setVisible(true);
+        dispose();
+    }
+    public void contactos(){
+        vContactos contactos= new vContactos();
+        contactos.setVisible(true);
+        dispose();
     }
 }
 

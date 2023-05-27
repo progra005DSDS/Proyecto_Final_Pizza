@@ -59,9 +59,11 @@ public class vOpcion extends JFrame {
     public void Usuario(){
         Ventana2 usuario= new Ventana2();
         usuario.setVisible(true);
+        dispose();
     }
     public void Admin(){
         Ventana3 admin= new Ventana3();
         admin.setVisible(true);
+        dispose();
     }
 }
